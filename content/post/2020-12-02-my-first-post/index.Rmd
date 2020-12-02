@@ -11,8 +11,10 @@ My first post.
 
 I like penguins
 
-```{r}
+```{r, message=FALSE}
 library(tidyverse)
 library(palmerpenguins)
+```
+```{r}
 glimpse(penguins)
 ```
