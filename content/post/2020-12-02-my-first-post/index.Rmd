@@ -1,8 +1,18 @@
 ---
 title: My first post
-author: ~
+author: Hayden McDonald
 date: '2020-12-02'
 slug: my-first-post
-categories: []
+categories: [introduction, R, data science]
 tags: []
 ---
+
+My first post.
+
+I like penguins
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+glimpse(penguins)
+```
