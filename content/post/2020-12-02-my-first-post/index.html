@@ -26,26 +26,3 @@ library(palmerpenguins)</code></pre>
 ## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
 ## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
 ## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…</code></pre>
-<pre class="r"><code>library(here)</code></pre>
-<pre><code>## here() starts at /home/hpmcdona/DASC-Blog</code></pre>
-<pre class="r"><code>fertilizer &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
-                         &quot;cereal_crop_yield_vs_fertilizer_application.csv&quot;))</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   Entity = col_character(),
-##   Code = col_character(),
-##   Year = col_double(),
-##   `Cereal yield (tonnes per hectare)` = col_double(),
-##   `Nitrogen fertilizer use (kilograms per hectare)` = col_double()
-## )</code></pre>
-<pre class="r"><code>glimpse(fertilizer)</code></pre>
-<pre><code>## Observations: 11,965
-## Variables: 5
-## $ Entity                                            &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afg…
-## $ Code                                              &lt;chr&gt; &quot;AFG&quot;, &quot;AFG&quot;, &quot;AFG&quot;…
-## $ Year                                              &lt;dbl&gt; 1961, 1962, 1963, 1…
-## $ `Cereal yield (tonnes per hectare)`               &lt;dbl&gt; 1.1151, 1.0790, 0.9…
-## $ `Nitrogen fertilizer use (kilograms per hectare)` &lt;dbl&gt; NA, NA, NA, NA, NA,…</code></pre>
-<pre class="r"><code>ggplot(fertilizer, aes(y =`Nitrogen fertilizer use (kilograms per hectare)`, x = Year)) + geom_point()</code></pre>
-<pre><code>## Warning: Removed 8951 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>

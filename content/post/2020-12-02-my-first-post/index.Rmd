@@ -19,25 +19,3 @@ library(palmerpenguins)
 glimpse(penguins)
 ```
 
-```{r}
-library(here)
-fertilizer <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01",
-                         "cereal_crop_yield_vs_fertilizer_application.csv"))
-```
-
-```{r}
-glimpse(fertilizer)
-```
-
-```{r}
-ggplot(fertilizer, aes(y =`Nitrogen fertilizer use (kilograms per hectare)`, x = Year)) + geom_point()
-```
-
-
-
-
-
-
-
-
-
