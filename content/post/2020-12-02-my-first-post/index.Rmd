@@ -18,4 +18,3 @@ library(palmerpenguins)
 ```{r}
 glimpse(penguins)
 ```
-
