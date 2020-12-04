@@ -1,0 +1,133 @@
+---
+output: 
+  pdf_document:
+    latex_engine: pdflatex
+    keep_tex: false
+    dev: cairo_pdf
+    template: svm-latex-resume.tex
+
+title: "Résumé"
+author: "Hayden McDonald"
+date: "8/31/2020 -- Update before applying"
+
+fontawesome: TRUE
+geometry: margin=1in
+# geometry: "top=.5in, left =.5in, right=.5in, bottom=.75in"
+
+# How can we get a hold of you?
+email: hpmcdona@uark.edu
+phone: 479-856-5171
+location: "Fayetteville, AR"
+github: hpmcdona
+mainfont: cochineal
+sansfont: Fira Sans
+#monofont: Fira Code # I want to use this, but seems to choke on @
+urlcolor: blue
+fontsize: 11pt
+
+includephoto: TRUE
+myphoto: Headshot.png
+shift: "6in,-.25 in" # this is default
+photobigness: 2 cm
+# photozoom: ".2\textwidth" # this is default
+---
+
+
+<!-- Read more about Pandoc's [fenced_divs](https://pandoc.org/MANUAL.html#extension-fenced_divs) syntax -->
+
+:::::: {.columns}
+::: {.column width="60%" data-latex="{0.60\textwidth}"}
+
+# Professional Experience
+
+## University of Arkansas
+Started working with Karl Schubert as a NSF EPSCoR Track 1 Undergraduate Research Assistantship Fellow in November 2020. I am involved on the Education side of the $20 million EPSCoR grant to Arkansas for Data Analytics that are Robust and Trusted(DART).
+
+## Walmart
+Currently working(12 months total, starting July 2019) as a stocker of meat and produce. Enhanced my team work and communication skills via exposure to a wide variety of customers, managers, and co-workers.
+
+## Taco Bell
+Worked as a chef for 9 months(June 2018-March 2019). Learned how to work closely with people as a team to overcome differences to achieve a common goal.
+
+## Volunteer Work
+- Volunteered at the Washington County Fair with the Ozark Cattlemen’s Association.
+- Helped move in incoming freshmen at the U of A into Pomfret on August 17th, 2019.
+- Was a judge at the Root Elementary Science fair.
+- Chaperoned at Owl Creek grade school.
+- Volunteered at the Habitat for Humanity Restore.
+
+# Technical Skills (or Accomplishments)
+
+## Scholarships
+- The Chancellor’s scholarship
+- The Honors College Academy Connection Scholarship
+- The Governor’s Distinguished Scholarship
+
+## Awards and Distinctions
+- I am part of the Honors College at the University of Arkansas
+- Financial literacy certified through W!SE exam
+- scored 85th percentile on the National Spanish Exam for Spanish 4
+- Successfully passed the OSHA 10 certification
+- Received the AP Scholar with Honor Award 
+
+:::
+::: {.column width="2%" data-latex="{0.02\textwidth}"}
+\  
+<!-- an empty div with an empty character to serve as a column sep -->
+:::
+:::::: {.column width="38%" data-latex="{0.38\textwidth}"}
+
+# Education
+
+## Higher Education
+I am enrolled at the University of Arkansas at Fayetteville in the Data Science undergraduate Bachelor's program.
+
+## High School
+Fayetteville High School, graduated May 2020.
+Flawless student record
+High School GPA: 4.1       ACT: 32 composite, 33 superscore
+Important Classes Taken in High School: Agricultural Mechanics, Agricultural Power Systems, Small Engine Technology, Introduction to Engineering Design, Principles of Engineering, Civil Engineering and Architecture, Engineering Design and Development, AP Chemistry, AP Physics 1, AP Calculus AB, AP US History, and Spanish 1-4.
+
+## High School Organizations
+Spanish National Honors Society, Science National Honors Society, FHS Socratic Chapter of National Honors Society, Mu Alpha Theta, FFA(Future Farmers of America).
+
+:::
+::::::
+
+<!-- If you want another page, this is how you can do it... -->
+
+<!-- \newpage
+
+:::::: {.columns}
+::: {.column width="60%" data-latex="{0.60\textwidth}"}
+
+# Technical Skills (or Accomplishments)
+
+## Scholarships
+
+- The Chancellor’s scholarship
+- The Honors College Academy Connection Scholarship
+- The Governor’s Distinguished Scholarship
+
+## Awards and Distinctions
+
+- I am part of the Honors College at the University of Arkansas
+- Financial literacy certified through W!SE exam
+- scored 85th percentile on the National Spanish Exam for Spanish 4
+- Successfully passed the OSHA 10 certification
+- Received the AP Scholar with Honor Award 
+
+
+:::
+::: {.column width="2%" data-latex="{0.02\textwidth}"}
+\
+
+
+:::
+:::::: {.column width="38%" data-latex="{0.38\textwidth}"}
+
+
+:::
+::::::
+
+-->
