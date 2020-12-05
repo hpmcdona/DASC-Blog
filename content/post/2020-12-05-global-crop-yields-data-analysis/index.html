@@ -1,0 +1,42 @@
+---
+title: Global Crop Yields Data Analysis
+author: ~
+date: '2020-12-05'
+slug: global-crop-yields-data-analysis
+categories: []
+tags: []
+---
+
+<link href="index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<pre class="r"><code>library(here)
+library(ggplot2)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
+key_crop_yields &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                              &quot;key_crop_yields.csv&quot;))
+fertilizer &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                         &quot;cereal_crop_yield_vs_fertilizer_application.csv&quot;))
+tractors &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                       &quot;cereal_yields_vs_tractor_inputs_in_agriculture.csv&quot;))
+land_use &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                       &quot;land_use_vs_yield_change_in_cereal_production.csv&quot;))
+arable_land &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                          &quot;arable_land_pin.csv&quot;))</code></pre>
+<ul>
+<li>Question 1: How does Tractors per 100 sq km arable land affect Total population over time in Ireland? Is there a clear trend that the number tractors affect population growth? To test this I will need to use the tractors dataset, filter for the years 1961-2005 since those are the years with available data, and I can go about answering the question in two ways. I can either make two line graphs with time as a variable or just one comparing the two variables against eachother. The two variables are Tractors per 100 sq km arable land and Total population (Gapminder). I will need to look at when the Tractors ratio is increasing if the population increases at a faster rate.</li>
+</ul>
+<pre><code>## Warning: Removed 14 rows containing missing values (geom_point).</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Possible that more tractors mattered more for food production from 1961 til around 1990 since number of tractors starts decreasing while pop increases which is different than previous trend. Possibly GMO crops and irrigation made less tractors necessary for more food.</p>
+<ul>
+<li>Question 2: How has the output of potatoes been affected in Ireland from 1961 to 2018? What years had the highest and lowest potato production? To test this I need to use the key_crop_yields dataset and select Ireland as the country and the years past 1961. Then I need to graph the output of potatoes vs time in years as a line graph. From there I can either see what years had the highest or lowest from the graph or use max/min functions in the piping or arrange in ascending and descending order.</li>
+</ul>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+Single crop dependence, potato famine 1845-1849
+* Question 3: How efficient has Ireland become with producing crops on arable land since 1961? To test this I will need to use the arable_land dataset and use the Arable land needed to produce a fixed quantity of crops ((1.0 = 1961)). I will have to filter for the years between 1961 and 2005 since those are the years where data is recorded for this variable. Then I will need to make a line graph of the variable previously noted over those years and look for any trends.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>

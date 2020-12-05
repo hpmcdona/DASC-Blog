@@ -1,0 +1,60 @@
+---
+title: Spotify Data Analysis
+author: ~
+date: '2020-12-05'
+slug: spotify-data-analysis
+categories: []
+tags: []
+---
+
+```{r, message=FALSE}
+library(here)
+library(ggplot2)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
+spotify <- read_csv(here::here("data", "tidytuesday",
+                               "data","2020","2020-01-21","spotify_songs.csv"))
+```
+
+* Question 1: How does energy compare to the duration of a song? To test this I will create a chart, possibly a point or violin, to show dispersion and look for clustering at certain energy levels and times to see if there is a trend for how long high energy songs typically are and how long low energy songs are.
+```{r}
+spotify %>%
+  ggplot(aes(x=duration_ms, y = energy)) +
+  geom_point() +
+  theme_solarized() +
+  xlab("Song Duration in Milliseconds") +
+  ylab("Song Energy") +
+  ggtitle("Song Energy vs Song Duration in Milliseconds")
+```
+
+* Question 2: What are the 10 most popular songs? What genres show up more than once? To test this I will need to filter for genre, song name, and popularity and then arrange them in descending order. From there I will get a list of the top 10 popular songs and can see what genres show up more than once.
+```{r}
+spotify %>%
+  select(track_name, playlist_genre, track_popularity) %>%
+  group_by(track_name) %>%
+  arrange(desc(track_popularity))
+```
+
+* Question 3: How does speechiness compare to popularity? Is there a sweetspot? To test this I will need to graph speechiness against popularity and look for a trend, I will likely start with a point graph and change from there if there is a better solution that presents itself.
+```{r}
+spotify %>%
+  ggplot(aes(x = speechiness, y = track_popularity)) +
+  geom_point() +
+  theme_solarized() + 
+  labs(x="Speechiness",y="Song Popularity") +
+  ggtitle("Speechiness vs Song Popularity")
+```
+Seems to be a strange trend where it slopes downward from top popularity to around .4 speechiness and slopes upward from .12 popularity to .4 speechiness to form a triangular point. The ones at the bottom people hated for reasons other than speechiness. 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+---
+title: Spotify Data Analysis
+author: ~
+date: '2020-12-05'
+slug: spotify-data-analysis
+categories: []
+tags: []
+---
+
+<link href="index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<pre class="r"><code>library(here)
+library(ggplot2)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
+spotify &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,
+                               &quot;data&quot;,&quot;2020&quot;,&quot;2020-01-21&quot;,&quot;spotify_songs.csv&quot;))</code></pre>
+<ul>
+<li><p>Question 1: How does energy compare to the duration of a song? To test this I will create a chart, possibly a point or violin, to show dispersion and look for clustering at certain energy levels and times to see if there is a trend for how long high energy songs typically are and how long low energy songs are.
+<img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p></li>
+<li><p>Question 2: What are the 10 most popular songs? What genres show up more than once? To test this I will need to filter for genre, song name, and popularity and then arrange them in descending order. From there I will get a list of the top 10 popular songs and can see what genres show up more than once.</p></li>
+</ul>
+<pre><code>## # A tibble: 32,833 x 3
+## # Groups:   track_name [23,450]
+##    track_name      playlist_genre track_popularity
+##    &lt;chr&gt;           &lt;chr&gt;                     &lt;dbl&gt;
+##  1 Dance Monkey    pop                         100
+##  2 Dance Monkey    latin                       100
+##  3 ROXANNE         latin                        99
+##  4 ROXANNE         r&amp;b                          99
+##  5 ROXANNE         r&amp;b                          99
+##  6 ROXANNE         edm                          99
+##  7 Tusa            pop                          98
+##  8 Memories        pop                          98
+##  9 Blinding Lights pop                          98
+## 10 Memories        pop                          98
+## # … with 32,823 more rows</code></pre>
+<ul>
+<li>Question 3: How does speechiness compare to popularity? Is there a sweetspot? To test this I will need to graph speechiness against popularity and look for a trend, I will likely start with a point graph and change from there if there is a better solution that presents itself.
+<img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+Seems to be a strange trend where it slopes downward from top popularity to around .4 speechiness and slopes upward from .12 popularity to .4 speechiness to form a triangular point. The ones at the bottom people hated for reasons other than speechiness.</li>
+</ul>

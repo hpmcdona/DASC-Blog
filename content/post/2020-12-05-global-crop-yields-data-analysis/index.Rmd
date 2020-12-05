@@ -1,0 +1,93 @@
+---
+title: Global Crop Yields Data Analysis
+author: ~
+date: '2020-12-05'
+slug: global-crop-yields-data-analysis
+categories: []
+tags: []
+---
+
+```{r, message=FALSE}
+library(here)
+library(ggplot2)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
+key_crop_yields <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01",
+                              "key_crop_yields.csv"))
+fertilizer <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01",
+                         "cereal_crop_yield_vs_fertilizer_application.csv"))
+tractors <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01",
+                       "cereal_yields_vs_tractor_inputs_in_agriculture.csv"))
+land_use <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01",
+                       "land_use_vs_yield_change_in_cereal_production.csv"))
+arable_land <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01",
+                          "arable_land_pin.csv"))
+```
+
+* Question 1: How does Tractors per 100 sq km arable land affect Total population over time in Ireland? Is there a clear trend that the number tractors affect population growth? To test this I will need to use the tractors dataset, filter for the years 1961-2005 since those are the years with available data, and I can go about answering the question in two ways. I can either make two line graphs with time as a variable or just one comparing the two variables against eachother. The two variables are Tractors per 100 sq km arable land and Total population (Gapminder). I will need to look at when the Tractors ratio is increasing if the population increases at a faster rate.
+
+```{r}
+p1 <- tractors %>%
+  filter(Entity == "Ireland", Year > 1960) %>%
+  ggplot(aes(x = Year,y = `Tractors per 100 sq km arable land`)) +
+    geom_point() +
+  theme_solarized() +
+    theme(axis.title.x=element_blank (),
+           axis.text.x=element_blank (),
+           axis.ticks.x=element_blank (),axis.title.y = element_text(size = 8.3)) +
+  ylab("Tractors Per 100 sq km Arable Land") +
+  ggtitle("Total Population of Ireland vs Tractors Per 100 sq km Arable Land")
+```
+
+```{r}
+
+p2 <- tractors %>%
+  filter(Entity == "Ireland", Year > 1960) %>%
+  ggplot(aes(x = Year,y = `Total population (Gapminder)`)) +
+    geom_point() +
+  theme_solarized() +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1), axis.title.y = element_text(size = 8.5)) +
+  ylab("Total Population of Ireland")
+```
+
+```{r}
+library(patchwork)
+p1 / p2
+```
+
+Possible that more tractors mattered more for food production from 1961 til around 1990 since number of tractors starts decreasing while pop increases which is different than previous trend. Possibly GMO crops and irrigation made less tractors necessary for more food.
+
+* Question 2: How has the output of potatoes been affected in Ireland from 1961 to 2018? What years had the highest and lowest potato production? To test this I need to use the key_crop_yields dataset and select Ireland as the country and the years past 1961. Then I need to graph the output of potatoes vs time in years as a line graph. From there I can either see what years had the highest or lowest from the graph or use max/min functions in the piping or arrange in ascending and descending order.
+
+```{r}
+key_crop_yields %>%
+  filter(Entity == "Ireland") %>%
+  ggplot(aes(x = Year, y = `Potatoes (tonnes per hectare)`)) +
+  geom_line() +
+  theme_solarized() +
+  ggtitle("Potato Output of Ireland (tonnes per hectare) vs Time (years)") +
+  ylab("Potato Output (tonnes per hectare)")
+```
+Single crop dependence, potato famine 1845-1849
+* Question 3: How efficient has Ireland become with producing crops on arable land since 1961? To test this I will need to use the arable_land dataset and use the Arable land needed to produce a fixed quantity of crops ((1.0 = 1961)). I will have to filter for the years between 1961 and 2005 since those are the years where data is recorded for this variable. Then I will need to make a line graph of the variable previously noted over those years and look for any trends.
+
+```{r}
+arable_land %>%
+  filter(Entity == "Ireland") %>%
+  ggplot(aes(x = Year, y = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`)) +
+  geom_line() +
+  theme_solarized() +
+  ylab("Arable Land Needed to Produce Fixed Quantity Crops") +
+  ggtitle("Arable Land Needed to Produce a Fixed Quantity of Crops vs Time (years)")
+```
+
+
+
+
+
+
+
+
+
