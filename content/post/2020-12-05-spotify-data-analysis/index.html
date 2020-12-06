@@ -19,28 +19,21 @@ library(ggthemes)
 knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
 spotify &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,
                                &quot;data&quot;,&quot;2020&quot;,&quot;2020-01-21&quot;,&quot;spotify_songs.csv&quot;))</code></pre>
-<ul>
-<li><p>Question 1: How does energy compare to the duration of a song? To test this I will create a chart, possibly a point or violin, to show dispersion and look for clustering at certain energy levels and times to see if there is a trend for how long high energy songs typically are and how long low energy songs are.
-<img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p></li>
-<li><p>Question 2: What are the 10 most popular songs? What genres show up more than once? To test this I will need to filter for genre, song name, and popularity and then arrange them in descending order. From there I will get a list of the top 10 popular songs and can see what genres show up more than once.</p></li>
-</ul>
-<pre><code>## # A tibble: 32,833 x 3
-## # Groups:   track_name [23,450]
-##    track_name      playlist_genre track_popularity
-##    &lt;chr&gt;           &lt;chr&gt;                     &lt;dbl&gt;
-##  1 Dance Monkey    pop                         100
-##  2 Dance Monkey    latin                       100
-##  3 ROXANNE         latin                        99
-##  4 ROXANNE         r&amp;b                          99
-##  5 ROXANNE         r&amp;b                          99
-##  6 ROXANNE         edm                          99
-##  7 Tusa            pop                          98
-##  8 Memories        pop                          98
-##  9 Blinding Lights pop                          98
-## 10 Memories        pop                          98
-## # … with 32,823 more rows</code></pre>
-<ul>
-<li>Question 3: How does speechiness compare to popularity? Is there a sweetspot? To test this I will need to graph speechiness against popularity and look for a trend, I will likely start with a point graph and change from there if there is a better solution that presents itself.
-<img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
-Seems to be a strange trend where it slopes downward from top popularity to around .4 speechiness and slopes upward from .12 popularity to .4 speechiness to form a triangular point. The ones at the bottom people hated for reasons other than speechiness.</li>
-</ul>
+<p>My first question is, how does the energy of a song compare to it’s duration? To answer this I took the variables for song time and energy and plotted them against each other as a scatterplot to look for any patterns. I wanted to test this because it is easy to assume that a high energy song is going to be short, while a low energy song will be long. Looking at the graph it is interesting to see that the highest density area has the shape of an upside down tomb stone, or a parabola. It would appear that most songs are in the 1e+05 ms to 3e+05 ms range and are of an energy .4 or higher. So there is a tendency for artists to got for higher energy songs that are around 3.5 minutes long in order to keep the attention of the listener. One problem with this analysis is that it doesn’t take into account how well the song is perceived by the audience. There could be a point in that clump that was just a song with someone screaming as loud as they could for 3.5 minutes, I’m looking at you Screamo. While some people may like that the general audience will likely veer away from that kind of music, so the analysis is not all that helpful in real world application.
+<img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>My second question is, What are the 10 most popular songs? What genres show up more than once? To answer this I had to pick the genre, song name, artist, and popularity from the data. Then I arranged in descending order by popularity and faced a new problem. The way the songs are stored is that a song can be in multiple genres and therefore get multiple entries. For example, Roxanne was in four different genres and therefore took up four slots of the top ten ranking. So, I had to learn a new command called ‘distinct’ to wipe out any repeats of a song based on it’s name but keep the three other variables involved. From there I narrowed down the list of twenty four thousand songs to the top ten. The main problem with this result is that the popularity variable is not specific enough. The popularity is only whole numbers, so many songs will end up tying and the actual ranking will be skewed. If I were to change the process in which the data was collected for this data set I would make the popularity variable more accurate to avoid this confusion. So, the top ten most popular songs in descending order are Dance Monkey, ROXANNE, Tusa, Memories, Blinding Lights, Circles, The Box, everything i wanted, Don’t Start Now, and Falling. Pop showed up 8 times out of the 10 results, so there is a clear preference towards pop on Spotify.</p>
+<pre><code>## # A tibble: 10 x 4
+##    track_name          track_artist   playlist_genre track_popularity
+##    &lt;chr&gt;               &lt;chr&gt;          &lt;chr&gt;                     &lt;dbl&gt;
+##  1 Dance Monkey        Tones and I    pop                         100
+##  2 ROXANNE             Arizona Zervas latin                        99
+##  3 Tusa                KAROL G        pop                          98
+##  4 Memories            Maroon 5       pop                          98
+##  5 Blinding Lights     The Weeknd     pop                          98
+##  6 Circles             Post Malone    pop                          98
+##  7 The Box             Roddy Ricch    rap                          98
+##  8 everything i wanted Billie Eilish  pop                          97
+##  9 Don&#39;t Start Now     Dua Lipa       pop                          97
+## 10 Falling             Trevor Daniel  pop                          97</code></pre>
+<p>My third question is, how does a song’s speechiness compare to it’s popularity? Is there a sweet spot of speechiness to make a song more popular? To answer this I graphed the variables attached to speechiness and song popularity against each other as a scatter plot. I made sure to not include points that had a speechiness above .66 because those are not necessarily classified as music. From there I looked at the general shape the points made and if any trends were obvious. My thinking behind this was to see if music listeners payed any mind to the amount of words in a song. If there are too many words it might as well be a college lecture while if there are too few there is hardly any message to it. Of course the popularity of a song doesn’t solely depend on speechiness, but there is some influence from what we can tell from the graph. What I found is that there seems to be a trend where the points slope downward from top popularity to around .4 speechiness and slope upward from 12 popularity to .4 speechiness to form a triangular point. Also, there are a lot of points with no popularity at all where it didn’t matter how speechy they were, so they were disliked for other reasons. So, in general as a song gets more speechy it’s popularity decreases. The trend upward from 12 popularity to around 50 popularity is likely attributed to other factors. There is no real sweet spot, but being less speechy does help. The main problem with this data is that the process by which speech was detected in the song was not clarified. If I were to redo this data set I would definitely include that process so people were better educated about the speechiness variable’s accuracy and meaning.
+<img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
