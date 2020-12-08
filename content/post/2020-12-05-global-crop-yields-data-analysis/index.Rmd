@@ -6,7 +6,7 @@ slug: global-crop-yields-data-analysis
 categories: []
 tags: []
 ---
-```{r, message=FALSE}
+```{r, message=FALSE, include=FALSE}
 library(here)
 library(ggplot2)
 library(tidyverse)
@@ -30,13 +30,13 @@ All 5 data sets can be combined to show the full potential of this information a
   
 If we look at the data specifically for Ireland we can notice that the data available does not go as far back as other countries. Ireland's data starts at 1961 and can go to 2005, 2014, or 2018. The date the data ends at has no apparent reason for why it does so. So, when we look at the data it is important to only grab the data past these dates, otherwise there would be a lot of blank slots involved.
   
-```{r}
+```{r,message=FALSE,warning=FALSE}
 arable_land %>%
   inner_join(fertilizer) %>%
   inner_join(key_crop_yields) %>%
   head(1)
 ```
-```{r}
+```{r, message=FALSE, warning=FALSE}
 land_use %>%
   inner_join(tractors) %>%
   head(1)
@@ -78,7 +78,7 @@ p1 / p2
   
 My second question is, how has the output of potatoes been affected in Ireland from 1961 to 2018? What years had the highest and lowest potato production? To answer this I used the key_crop_yields data set and selected Ireland as the country and the years past 1961. Then I to graphed the output of potatoes vs time in years as a line graph. The exact years that had maximum and minimum potato output were unclear, so I had to take the same data set and arrange it in descending order. From there I used head to get the max potato output and tail to get the min potato output and their associated dates. So, from the graph we can tell that potato production since 1961 has had a lot of booms and busts. The best year for potato output in Ireland was 2017 with 44.8 tonnes per hectare, but as can be seen right after that it tanked. The worst year for potato output was 1981 with a measly 19 tonnes per hectare, but from there there was a general upward trend in production. I didn't know that potato farming could be so volatile. The biggest problem I have with this data is that it doesn't go back very far. I would have liked to have seen how the production of potatoes sank during 1845-1849, an event took place known as the potato famine. That famine is what led a lot of Irish people to immigrate to the US. That famine is a great example of how you should never put all your eggs in one basket, because there might be a blight and you'll have nothing else to eat and be forced to immigrate to another continent. Crop failures are still tragic today, but we have many other foods that we can substitute in our diet when that happens.
   
-```{r}
+```{r, message=FALSE, warning=FALSE}
 key_crop_yields %>%
   filter(Entity == "Ireland") %>%
   ggplot(aes(x = Year, y = `Potatoes (tonnes per hectare)`)) +
@@ -100,7 +100,7 @@ key_crop_yields %>%
   
 My third question is, how efficient has Ireland become with producing crops on arable land since 1961? To answer this I needed to use the arable_land data set and use the Arable land needed to produce a fixed quantity of crops ((1.0 = 1961)). The data only began to be recorded after 1960, so the starting point will be 1961 and the end point will be 2014. Then I made a line graph of the variable previously noted over those years and looked for any trends. Overall, the land efficiency of growing crops in Ireland increased from 1964 to around 1980 and has mostly fluctuated around the same area ever since. I believe that the reason for this efficiency could be because of better weather, better infrastructure like irrigation systems, and genetically modified crops that require less water. Also, the GMO crops could prevent crop failures since they can be more resilient to the elements and insects. The main problem I have with the data is that it doesn't include the dates which had crop failures. We could assume that an increase in the land required would mean a failure of some sort but it could also be attributed to other factors. So, having a little more specificity about the dates would be helpful to narrow down why the data moves the way it does.
   
-```{r}
+```{r, warning=FALSE,message=FALSE}
 arable_land %>%
   filter(Entity == "Ireland") %>%
   ggplot(aes(x = Year, y = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`)) +
