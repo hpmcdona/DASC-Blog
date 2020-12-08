@@ -25,7 +25,7 @@ land_use <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01"
 arable_land <- read_csv(here::here("data", "tidytuesday","data","2020","2020-09-01",
                           "arable_land_pin.csv"))
 ```
-
+Introduction
   My first question is, how does Tractors per 100 sq km arable land affect Total population over time in Ireland? Is there a clear trend that the number tractors affect population growth? To answer this I used the tractors data set, and filtered for the years past 1961 since those are the years with available data. Then I created two graphs, the tractor to arable land ratio over time and the population over time in Ireland and stacked them on top of each other to compare them. What I noticed is that both graphs have similar sections of increasing and decreasing slop up until 1995, from there the tractor ratio continues to decrease while population increases. It think that more tractors mattered more for food production from 1961 til around 1995. It is possible that the wide spread implementation of GMO crops and irrigation made less tractors necessary for more food. So before 1995 in Ireland to make more food more tractors were needed to support a bigger population. But, after 1995 new technology allowed better crop production while needing less tractors. One problem with the data is that the tractor ratio data only goes up to 2005,while the population goes all the way to 2019. So, not having that data could blind us from being able to see any other interesting trends about how much new technology cut down on the need for tractors.
 
 ```{r}
