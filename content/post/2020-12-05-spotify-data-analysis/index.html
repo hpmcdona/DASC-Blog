@@ -11,6 +11,14 @@ tags: []
 <script src="index_files/anchor-sections/anchor-sections.js"></script>
 
 
+<pre class="r"><code>library(here)
+library(ggplot2)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
+spotify &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,
+                               &quot;data&quot;,&quot;2020&quot;,&quot;2020-01-21&quot;,&quot;spotify_songs.csv&quot;))</code></pre>
 <p>Music is a very enjoyable art that can take on many forms. But, there are those who just like to listen to music, then there are those who like to dissect it, like me in this case. For this project I am examining the Spotify Songs dataset contained in the spotify_songs.csv file on the Tidy Tuesday website. The data consists of 23 variables with 32,833 observations, the definitions for each variable were taken directly from the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-01-21/readme.md">Tidy Tuesday Spotify website</a>. The data is thankfully all in one set so that there is no joining necessary, but the data set is still rather lengthy. The data comes directly from Spotify but was collected by an outside group and published on Tidy Tuesday. The data was collected from the beginning on Spotify all the way up to January 2020. I wish to examine how song length plays a role in the energetic feeling of a piece, what the ten most popular songs are on Spotify up to January 2020, and if the popularity of a song is related to it’s speechiness.</p>
 <p>For this analysis we will be focusing on the variables revolving around speechiness, energy, popularity, and time. Song popularity ranges from 0-100 where higher is better. The variable energy measures from 0.0 to 1.0 and represents a measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy, which would be closer to 1. The variable speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording, the closer to 1.0 it will be. Before we dive right into creating graphs and making lists, it would be valuable to gather a few summary statistics. The reason summary statistics might be helpful before I try to answer the questions is to have a a good idea of where the trends that I am looking for might sit. In this case, the summary statistics I want are the average time of a song, the average energy, and the average speechiness.</p>
 <pre><code>## [1] 225799.8</code></pre>

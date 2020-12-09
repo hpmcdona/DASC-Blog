@@ -6,7 +6,7 @@ slug: global-crop-yields-data-analysis
 categories: []
 tags: []
 ---
-```{r, message=FALSE, include=FALSE}
+```{r, message=FALSE}
 library(here)
 library(ggplot2)
 library(tidyverse)

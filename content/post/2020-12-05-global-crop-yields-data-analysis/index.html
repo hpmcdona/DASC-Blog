@@ -11,6 +11,22 @@ tags: []
 <script src="index_files/anchor-sections/anchor-sections.js"></script>
 
 
+<pre class="r"><code>library(here)
+library(ggplot2)
+library(tidyverse)
+library(readxl)
+library(ggthemes)
+knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
+key_crop_yields &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                              &quot;key_crop_yields.csv&quot;))
+fertilizer &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                         &quot;cereal_crop_yield_vs_fertilizer_application.csv&quot;))
+tractors &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                       &quot;cereal_yields_vs_tractor_inputs_in_agriculture.csv&quot;))
+land_use &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                       &quot;land_use_vs_yield_change_in_cereal_production.csv&quot;))
+arable_land &lt;- read_csv(here::here(&quot;data&quot;, &quot;tidytuesday&quot;,&quot;data&quot;,&quot;2020&quot;,&quot;2020-09-01&quot;,
+                          &quot;arable_land_pin.csv&quot;))</code></pre>
 <p>If you have eaten at any point in your life, you may find this data analysis interesting. For this project I am examining the Global Crop Yields data set contained in 5 different csv files on the Tidy Tuesday website. The definitions for each variable were taken from the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-01-21/readme.md">Tidy Tuesday Global Crop Yields website</a>. The data set is split up into five smaller data sets about arable land, fertilizer, crop yield, land usage, and tractors. I will be using the data about crop yields, arable land, and tractors to see how agriculture in Ireland has changed over time and if it is for the better. I chose to focus on Ireland specifically because I have roots from there and they are well known for their love of potatoes. I wish to examine how the number of tractors affected population growth, how many potatoes Ireland produces, and how efficient Ireland has become in it’s farming process.</p>
 <p>All 5 data sets can be combined to show the full potential of this information at our disposal. But, there are discrepancies in the format between tractors and land use to the other three so they have to be separate. Below is an example of what one line would look line when the sets are complete. For this analysis we will be using the output of potatoes, the entity Ireland, the arable land crop ratio, year, total population, and tractors to arable land ratio.</p>
 <p>If we look at the data specifically for Ireland we can notice that the data available does not go as far back as other countries. Ireland’s data starts at 1961 and can go to 2005, 2014, or 2018. The date the data ends at has no apparent reason for why it does so. So, when we look at the data it is important to only grab the data past these dates, otherwise there would be a lot of blank slots involved.</p>
