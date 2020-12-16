@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.2)  2 DEC 2020 13:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.2)  16 DEC 2020 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -871,37 +871,42 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 (/home/hpmcdona/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 3536) in paragraph at lines 262--264
+Underfull \hbox (badness 3536) in paragraph at lines 248--250
 \T1/lmr/m/n/10.95 I am en-rolled at the Uni-ver-sity
  []
 
 
-Underfull \hbox (badness 2990) in paragraph at lines 268--275
-\T1/lmr/m/n/10.95 High School GPA: 4.1 ACT: 32
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+[]\T1/lmr/m/n/10.95 The Gov-er-nor's Dis-tin-guished
  []
 
 
-Underfull \hbox (badness 5908) in paragraph at lines 268--275
-\T1/lmr/m/n/10.95 com-pos-ite, 33 su-per-score Im-por-
+Underfull \hbox (badness 7221) in paragraph at lines 267--274
+\T1/lmr/m/n/10.95 Fayetteville High School, grad-u-
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 268--275
+Underfull \hbox (badness 2922) in paragraph at lines 267--274
+\T1/lmr/m/n/10.95 com-pos-ite,33 su-per-score. Im-por-
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 267--274
 \T1/lmr/m/n/10.95 nol-ogy, In-tro-duc-tion to En-gi-neer-
  []
 
 
-Underfull \hbox (badness 4156) in paragraph at lines 279--282
+Underfull \hbox (badness 4156) in paragraph at lines 278--281
 \T1/lmr/m/n/10.95 Spanish Na-tional Hon-ors So-ci-ety,
  []
 
 
-Underfull \hbox (badness 6016) in paragraph at lines 279--282
+Underfull \hbox (badness 6016) in paragraph at lines 278--281
 \T1/lmr/m/n/10.95 Sci-ence Na-tional Hon-ors So-ci-ety,
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 279--282
+Underfull \hbox (badness 1033) in paragraph at lines 278--281
 \T1/lmr/m/n/10.95 Hon-ors So-ci-ety, Mu Al-pha Theta,
  []
 
@@ -910,20 +915,20 @@ AED: lastpage setting LastPage
 [1
 
 {/home/hpmcdona/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Heads
-hot.png>] [2] (./resume-example.aux)
+hot.png>] (./resume-example.aux)
 Package rerunfilecheck Info: File `resume-example.out' has not changed.
-(rerunfilecheck)             Checksum: FB7F32F9FDDBEFBF0500CE75F4F5BAF5;1712.
+(rerunfilecheck)             Checksum: B51BE5B22F4725D2E9EFDD2B4D2A21D7;1712.
  ) 
 Here is how much of TeX's memory you used:
- 24219 strings out of 481433
- 423094 string characters out of 5920117
- 724682 words of memory out of 5000000
+ 24218 strings out of 481433
+ 423088 string characters out of 5920117
+ 726682 words of memory out of 5000000
  40470 multiletter control sequences out of 15000+600000
  591194 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  80i,11n,85p,1026b,654s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/home/hpmcdona/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/home/hpmc
-dona/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/hpmcdona/.TinyTeX/
+{/home/hpmcdona/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/hpmcd
+ona/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/home/hpmcdona/.TinyTeX/
 texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{/home/hpmcdona/.Ti
 nyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}</home/hpmcdona
 /.TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></home/hpmc
@@ -934,10 +939,10 @@ TeX/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></home/hpmcdona/.TinyTeX/texmf
 c/lm/lmr9.pfb></home/hpmcdona/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.p
 fb></home/hpmcdona/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></hom
 e/hpmcdona/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on resume-example.pdf (2 pages, 634199 bytes).
+Output written on resume-example.pdf (1 page, 633716 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
+ 134 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 

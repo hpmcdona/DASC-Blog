@@ -50,25 +50,20 @@ Currently working(12 months total, starting July 2019) as a stocker of meat and 
 Worked as a chef for 9 months(June 2018-March 2019). Learned how to work closely with people as a team to overcome differences to achieve a common goal.
 
 ## Volunteer Work
-- Volunteered at the Washington County Fair with the Ozark Cattlemen’s Association.
-- Helped move in incoming freshmen at the U of A into Pomfret on August 17th, 2019.
-- Was a judge at the Root Elementary Science fair.
+- Washington County Fair: Ozark Cattlemen’s Assoc.
+- Moved in incoming freshmen at the U of A into Pomfret, August 17th, 2019.
+- Judge at the Root Elementary Science fair.
 - Chaperoned at Owl Creek grade school.
-- Volunteered at the Habitat for Humanity Restore.
+- Habitat for Humanity Restore.
 
 # Technical Skills (or Accomplishments)
 
-## Scholarships
-- The Chancellor’s scholarship
-- The Honors College Academy Connection Scholarship
-- The Governor’s Distinguished Scholarship
-
 ## Awards and Distinctions
-- I am part of the Honors College at the University of Arkansas
-- Financial literacy certified through W!SE exam
-- scored 85th percentile on the National Spanish Exam for Spanish 4
-- Successfully passed the OSHA 10 certification
-- Received the AP Scholar with Honor Award 
+- Honors College at the University of Arkansas
+- Financial literacy certified via W!SE exam
+- 85th percentile for National Spanish Exam, Spanish 4
+- Received OSHA 10 certification
+- Received AP Scholar with Honor Award 
 
 :::
 ::: {.column width="2%" data-latex="{0.02\textwidth}"}
@@ -82,10 +77,15 @@ Worked as a chef for 9 months(June 2018-March 2019). Learned how to work closely
 ## Higher Education
 I am enrolled at the University of Arkansas at Fayetteville in the Data Science undergraduate Bachelor's program.
 
+## Scholarships
+- The Chancellor’s scholarship
+- The Honors College Academy Connection Scholarship
+- The Governor’s Distinguished Scholarship
+
 ## High School
 Fayetteville High School, graduated May 2020.
-Flawless student record
-High School GPA: 4.1       ACT: 32 composite, 33 superscore
+Flawless student record,
+High School GPA:4.1,ACT:32 composite,33 superscore.
 Important Classes Taken in High School: Agricultural Mechanics, Agricultural Power Systems, Small Engine Technology, Introduction to Engineering Design, Principles of Engineering, Civil Engineering and Architecture, Engineering Design and Development, AP Chemistry, AP Physics 1, AP Calculus AB, AP US History, and Spanish 1-4.
 
 ## High School Organizations
