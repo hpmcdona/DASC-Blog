@@ -9,6 +9,7 @@ tags: []
 
 ```{r, message=FALSE}
 library(here)
+library(patchwork)
 library(ggplot2)
 library(tidyverse)
 library(readxl)
